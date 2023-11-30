@@ -14,11 +14,14 @@ const addBudget = () => {
     localStorage.setItem("budget", JSON.stringify(budgetArray));
     window.location.href = "trackIt.html";
   } else {
-    display.innerHTML = `<p class="alert alert-danger w-100 col-lg col-sm col-md">fill the input</p>`;
+    err.innerHTML = `<p class="alert alert-danger w-100 col-lg col-sm col-md">fill the input</p>`;
   }
 };
 
 console.log(budgetArray);
+setTimeout(() => {
+  err.style.display = "none";
+}, 3500);
 
 // result page
 
@@ -44,6 +47,9 @@ const displayAll = () => {
 <div>
  Price: $${product.proPrice}
 </div>
+<p>
+    Total: $ ${productCost} 
+ </p>
   </div>
     <div class="d-flex justify-content-between">
 
@@ -124,7 +130,7 @@ const deleteAny = (i) => {
   if (budgetArray.length > 0) {
     document.getElementById(
       "resulthorn"
-    ).innerHTML += `<p class="text-light fw-bold bg-success p-2 text-center w-100 pbottom">Total Budget: &#8358;${totalSpent.toFixed(
+    ).innerHTML += `<p class="text-light fw-bold bg-success p-2 text-center w-100 pbottom">Total Budget: &#8358;${totalAmountSpent.toFixed(
       2
     )}</p>`;
   } else {
@@ -137,3 +143,5 @@ const deleteAny = (i) => {
     errorx.style.display = "none";
   }, 2000);
 };
+
+
