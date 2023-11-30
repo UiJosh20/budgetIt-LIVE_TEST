@@ -92,7 +92,7 @@ displayAll();
 if (budgetArray.length > 0) {
   document.getElementById(
     "resulthorn"
-  ).innerHTML += `<p class="text-light fw-bold bg-info p-2 text-center w-100 pbottom">Total Budget: &#8358;${totalAmountSpent.toFixed(
+  ).innerHTML += `<p class="text-light fw-bold bg-info p-2 text-center w-100 pbottom">Total Budget: $${totalAmountSpent.toFixed(
     2
   )}</p>`;
 } else {
@@ -108,13 +108,13 @@ const editAny = (i) => {
   ).value;
   budgetArray[i]["proPrice"] = document.getElementById(`priceName-${i}`).value;
   localStorage.setItem("budget", JSON.stringify(budgetArray));
-  totalSpent = 0;
-  resultCard.innerHTML = "";
+  totalAmountSpent = 0;
+  resultDiv.innerHTML = "";
   displayAll();
   if (budgetArray.length > 0) {
     document.getElementById(
       "resulthorn"
-    ).innerHTML += `<p class="text-light fw-bold bg-info p-2 text-center w-100 pbottom">Total Budget: &#8358;${totalAmountSpent.toFixed(
+    ).innerHTML += `<p class="text-light fw-bold bg-info p-2 text-center w-100 pbottom">Total Budget: $${totalAmountSpent.toFixed(
       2
     )}</p>`;
   }
@@ -130,7 +130,7 @@ const deleteAny = (i) => {
   if (budgetArray.length > 0) {
     document.getElementById(
       "resulthorn"
-    ).innerHTML += `<p class="text-light fw-bold bg-success p-2 text-center w-100 pbottom">Total Budget: &#8358;${totalAmountSpent.toFixed(
+    ).innerHTML += `<p class="text-light fw-bold bg-success p-2 text-center w-100 pbottom">Total Budget: $${totalAmountSpent.toFixed(
       2
     )}</p>`;
   } else {
